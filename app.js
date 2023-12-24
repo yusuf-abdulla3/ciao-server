@@ -30,7 +30,7 @@ const background = require('./routes/background');
 
 var app = express();
 const corsOptions ={
-  origin:'https://ciao-server.onrender.com', 
+  origin:'http://localhost:3000', 
   credentials:true,            //access-control-allow-credentials:true
   // optionSuccessStatus:200,
 }
