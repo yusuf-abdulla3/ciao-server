@@ -1,16 +1,13 @@
 let express = require('express');
 let router = express.Router();
 const cookieSession = require('cookie-session');
-// app.use(cookieSession({ name: 'session', keys: ['key1', 'key2'] }));
 
 module.exports = (db) => {
   /* GET home page. */
   
   router.get('/', function(req, res) {
     console.log('login testing!!');
-    // console.log('firsttttt', r);
 
-    // req.session.abc = 'abc';
     if(req.session.user_id){
 
       res.send(200, { firstName:req.session.firstName, id:req.session.user_id });
@@ -33,9 +30,6 @@ module.exports = (db) => {
         if(result.rows[0]){
           req.session.user_id =result.rows[0].id;
           req.session.firstName = result.rows[0].first_name;
-          // console.log('session',req.session); 
-          // result.rows[0].session = req.session.user_id;
-          // console.log(result);
           res.send(result);
         }else{
           res.send({message: "Wrong username/password combination!"});

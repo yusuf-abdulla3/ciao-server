@@ -30,7 +30,7 @@ const background = require('./routes/background');
 
 var app = express();
 const corsOptions ={
-  origin: process.env.APP_URL, 
+  origin: "*", 
   credentials:true,            //access-control-allow-credentials:true
   // optionSuccessStatus:200,
 }
