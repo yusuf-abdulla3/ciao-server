@@ -9,7 +9,7 @@ const client = new pg.Client({
   connectionString: connectionString || process.env.DATABASE_URL,
 });
 
-console.log(`Connected to ${process.env.DB_NAME} on ${process.env.DB_HOST}`);
+// console.log(`Connected to ${process.env.DB_NAME} on ${process.env.DB_HOST}`);
 client.connect();
 
 module.exports = client;
