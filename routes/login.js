@@ -12,7 +12,7 @@ module.exports = (db) => {
 
       res.send(200, { firstName:req.session.firstName, id:req.session.user_id });
     }else{
-      res.send(401, {msg: 'not logged in'});
+      res.status(401).send({msg: 'not logged in'});
     }
 
   })  
