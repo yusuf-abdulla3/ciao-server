@@ -37,7 +37,14 @@ const corsOptions ={
 app.use(cors(corsOptions)); // CORS middleware useage
 // app.use(cookieParser())
 
-app.use(cookieSession({ name: 'session', keys: ['key1', 'key2'] }));
+app.use(cookieSession({ name: 'session', keys: ['key1', 'key2'], secure: true,  cookie: {
+  secure: true,
+  sameSite: 'None',
+  // other cookie options
+},
+ }));
+
+ app.set('trust proxy', 1);
 
 
 const db = require('./db');

@@ -30,6 +30,7 @@ module.exports = (db) => {
         if(result.rows[0]){
           req.session.user_id =result.rows[0].id;
           req.session.firstName = result.rows[0].first_name;
+          console.log("CHECKKKKK", req.session)
           res.send(result);
         }else{
           res.send({message: "Wrong username/password combination!"});
